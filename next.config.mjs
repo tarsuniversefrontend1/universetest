@@ -4,7 +4,7 @@ const nextConfig = {
     domains: ["test.tarsuniverse.com"],
     unoptimized: true,
   },
-  export: "out",
+  output: "export",
   reactStrictMode: true,
   trailingSlash: true,
   swcMinify: true,
