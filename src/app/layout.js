@@ -14,29 +14,29 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: " Universe",
   description: "Build Your Future at Universe",
-  openGraph: {
-    type: "website",
-    title: "Universe",
-    description: "Build Your Future at Universe",
-    url: "https://www.tarsuniverse.com",
-    siteName: "Universe",
-    images: [
-      {
-        url: "/favicon.png", 
-        width: 1200,
-        height: 630,
-        alt: "TARS Universe Logo",
-      },
-    ],
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Universe",
-    description: "Build Your Future at TARS",
-    site: "@tarsuniverse",
-    image: "/favicon.png", 
-  },
+  // openGraph: {
+  //   type: "website",
+  //   title: "Universe",
+  //   description: "Build Your Future at Universe",
+  //   url: "https://www.tarsuniverse.com",
+  //   siteName: "Universe",
+  //   images: [
+  //     {
+  //       url: "/favicon.png",
+  //       width: 1200,
+  //       height: 630,
+  //       alt: "TARS Universe Logo",
+  //     },
+  //   ],
+  //   locale: "en_US",
+  // },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "Universe",
+  //   description: "Build Your Future at TARS",
+  //   site: "@tarsuniverse",
+  //   image: "/favicon.png",
+  // },
 };
 
 export default function RootLayout({ children }) {
