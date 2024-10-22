@@ -5,10 +5,13 @@ import { usePathname } from "next/navigation";
 
 const AuthLogo = () => {
   const pathname = usePathname();
-  const hideNavbar = ["/auth/signIn/", "/auth/signUp/success/", "/auth/resetPassword/success/"].includes(pathname);
+  const hideNavbar = [
+    "/auth/signIn",
+    "/auth/signUp/success",
+    "/auth/resetPassword/success",
+  ].includes(pathname);
   if (hideNavbar) return null;
 
-  
   return (
     <Image
       loading="lazy"
