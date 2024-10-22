@@ -2,12 +2,13 @@
 const nextConfig = {
   images: {
     domains: ["test.tarsuniverse.com"],
-    unoptimized: true, 
+    unoptimized: true,
   },
+  export: "out",
   reactStrictMode: true,
   trailingSlash: true,
   swcMinify: true,
-  distDir: "build", 
+  distDir: "build",
 };
 
 export default nextConfig;
