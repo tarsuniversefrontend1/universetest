@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logo from "../../../../Public/icons/officialIcons/blackUniverse.svg";
+import logo from "../../../../assets/icons/officialIcons/blackUniverse.svg";
 import HomeFooter from "@/components/HomeFooter/HomeFooter";
 import { useTimeLine } from "@/lib/TimeLineProvider/TimeLineProvider";
 import RightWidgetLoader from "@/loaders/Home/RightWidgetLoader/RightWidgetLoader";

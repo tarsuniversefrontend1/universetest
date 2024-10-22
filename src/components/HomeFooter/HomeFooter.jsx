@@ -1,5 +1,5 @@
-import Link from "next/link"
-import arrow from "../../../Public/icons/home/homeFooter/arrow.svg"
+import Link from "next/link";
+import arrow from "../../../assets/icons/home/homeFooter/arrow.svg";
 import Image from "next/image";
 
 const HomeFooter = () => {
@@ -16,11 +16,11 @@ const HomeFooter = () => {
           <Image src={arrow} alt="arrow" loading="lazy" width={8}></Image>
         </div>
         <Link href="/getApp">
-          Get The <span className="azonix">Universe</span>{" "} App
+          Get The <span className="azonix">Universe</span> App
         </Link>
       </div>
     </div>
   );
-}
+};
 
-export default HomeFooter
+export default HomeFooter;

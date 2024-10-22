@@ -2,18 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import c from "../../../Public/icons/register/c.svg";
-import tars from "../../../Public/icons/register/blackTars.svg";
+import c from "../../../assets/icons/register/c.svg";
+import tars from "../../../assets/icons/register/blackTars.svg";
 import Image from "next/image";
 
 const AuthenticationFooter = () => {
-    const pathname = usePathname();
-    const currentPath = pathname.pathname;
+  const pathname = usePathname();
+  const currentPath = pathname.pathname;
 
-    const footerShowing =
-      currentPath === "/auth/signIn" ||
-      currentPath === "/auth/signUp" ||
-      currentPath === "/auth/forgotPassword";
+  const footerShowing =
+    currentPath === "/auth/signIn" ||
+    currentPath === "/auth/signUp" ||
+    currentPath === "/auth/forgotPassword";
   return (
     <>
       {footerShowing && (
@@ -63,6 +63,6 @@ const AuthenticationFooter = () => {
       )}
     </>
   );
-}
+};
 
-export default AuthenticationFooter
+export default AuthenticationFooter;

@@ -1,14 +1,14 @@
 "use client";
-import Media from "../../../../Public/icons/home/create/media.svg";
-import event from "../../../../Public/icons/home/create/event.svg";
-import project from "../../../../Public/icons/home/create/createProject.svg";
+import Media from "../../../../assets/icons/home/create/media.svg";
+import event from "../../../../assets/icons/home/create/event.svg";
+import project from "../../../../assets/icons/home/create/createProject.svg";
 import { UserContext } from "@/lib/UserProvider/UserProvider";
 import { useContext, useState } from "react";
 import Image from "next/image";
-import blankUser from "../../../../Public/icons/blankUser.png";
+import blankUser from "../../../../assets/icons/blankUser.png";
 import CreateCardLoader from "@/loaders/Home/Timeline/CreateCardLoader/CreateCardLoader";
 import PostPopup from "@/components/Popups/PostPopup/PostPopup";
-import greenTik from "../../../../Public/icons/ssuccess/greenSuccess.svg";
+import greenTik from "../../../../assets/icons/ssuccess/greenSuccess.svg";
 import { PostsFetch } from "@/hooks/PostsFetch/PostsFetch";
 import Link from "next/link";
 
@@ -30,7 +30,9 @@ const CreateCard = () => {
     media,
     setVisibility,
     createLoading,
-    submitPost,postData,setPostData,
+    submitPost,
+    postData,
+    setPostData,
     handleTextChange,
   } = PostsFetch();
 
@@ -38,60 +40,57 @@ const CreateCard = () => {
     setPopupToogle(!popupToogle);
   };
   const { profileImageURL } = user;
-    const handleLocationSelect = (locationText) => {
-      setSelectedLocation(locationText);
-      setLocation(locationText);
-      setLocationPicker(false);
-    };
-    const toogleVisibility = (newVisibility) => {
-      setVisibilityPicker(!visibilityPicker);
-      setLocationPicker(false);
-    };
-    const handleVisibilityChange = (visibility) => {
-      setVisibilityPicker(false);
-      setVisibility(visibility);
-    };
-    const toogleSchelued = () => {
-      setScheluedPicker(!scheluedPicker);
-      setLocationPicker(false);
-    };
+  const handleLocationSelect = (locationText) => {
+    setSelectedLocation(locationText);
+    setLocation(locationText);
+    setLocationPicker(false);
+  };
+  const toogleVisibility = (newVisibility) => {
+    setVisibilityPicker(!visibilityPicker);
+    setLocationPicker(false);
+  };
+  const handleVisibilityChange = (visibility) => {
+    setVisibilityPicker(false);
+    setVisibility(visibility);
+  };
+  const toogleSchelued = () => {
+    setScheluedPicker(!scheluedPicker);
+    setLocationPicker(false);
+  };
 
-    const toogleLocation = () => {
-      setLocationPicker(!locationPicker);
-    };
+  const toogleLocation = () => {
+    setLocationPicker(!locationPicker);
+  };
 
-    const validatePost = () => {
-      const hasText = textareaValue.trim().length > 0;
-      const hasMedia = !!postData?.mediaPreviewUrl;
+  const validatePost = () => {
+    const hasText = textareaValue.trim().length > 0;
+    const hasMedia = !!postData?.mediaPreviewUrl;
 
-      return hasText || hasMedia; // Return true if either condition is met
-    };
-    const handleMediaChange = (event) => {
-      console.log("POst data", postData);
-      console.log("clicked media");
-      const file = event.target.files[0];
-      if (file) {
-        const mediaPreviewUrl = URL.createObjectURL(file);
-        setPostData((prev) => ({ ...prev, mediaPreviewUrl }));
-      }
-    };
+    return hasText || hasMedia; // Return true if either condition is met
+  };
+  const handleMediaChange = (event) => {
+    console.log("POst data", postData);
+    console.log("clicked media");
+    const file = event.target.files[0];
+    if (file) {
+      const mediaPreviewUrl = URL.createObjectURL(file);
+      setPostData((prev) => ({ ...prev, mediaPreviewUrl }));
+    }
+  };
 
-    const handlePostSubmit = async () => {
-      toogle();
-      if (!validatePost()) {
-        setError("At least description or media");
-        return;
-      }
+  const handlePostSubmit = async () => {
+    toogle();
+    if (!validatePost()) {
+      setError("At least description or media");
+      return;
+    }
 
-      await submitPost();
-    };
+    await submitPost();
+  };
 
-
-    const handleRemoveMedia = () => {
-      setPostData((prev) => ({ ...prev, mediaPreviewUrl: null })); // Reset the mediaPreviewUrl
-    };
-
-  
+  const handleRemoveMedia = () => {
+    setPostData((prev) => ({ ...prev, mediaPreviewUrl: null })); // Reset the mediaPreviewUrl
+  };
 
   return (
     <div className="w-full">

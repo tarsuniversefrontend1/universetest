@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import phone from "../../../../Public/icons/home/footer/phone.svg";
-import location from "../../../../Public/icons/home/footer/whiteLocation.svg";
-import facebook from "../../../../Public/icons/home/footer/facebook.svg";
-import twitter from "../../../../Public/icons/home/footer/twitter.svg";
-import linkedin from "../../../../Public/icons/home/footer/linkedin.svg";
+import phone from "../../../../assets/icons/home/footer/phone.svg";
+import location from "../../../../assets/icons/home/footer/whiteLocation.svg";
+import facebook from "../../../../assets/icons/home/footer/facebook.svg";
+import twitter from "../../../../assets/icons/home/footer/twitter.svg";
+import linkedin from "../../../../assets/icons/home/footer/linkedin.svg";
 import ContactForm from "@/components/Footer/Contact/ContactForm";
 
 const page = () => {

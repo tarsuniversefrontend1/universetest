@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
-import refresh from "../../../../Public/icons/home/refresh.png";
+import refresh from "../../../../assets/icons/home/refresh.png";
 
 const RefreshButton = ({ loadNewPosts, setError }) => {
-  
   const handleClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     loadNewPosts();

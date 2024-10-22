@@ -4,19 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer/Footer";
 import { AuthContext } from "@/AuthProvider/AuthProvider";
-import email from "../../Public/icons/welcome/email.png"
+import email from "../../assets/icons/welcome/email.png";
 
 const Home = React.memo(() => {
   const [showLogo, setShowLogo] = useState(false);
   const [hideImage, setHideImage] = useState(false);
-  const {googleSignIn} = useContext(AuthContext);
+  const { googleSignIn } = useContext(AuthContext);
 
   useEffect(() => {
-
     const logoTimer = setTimeout(() => {
       setShowLogo(true);
     }, 20000);
-
 
     const imageTimer = setTimeout(() => {
       setHideImage(true);
@@ -28,20 +26,14 @@ const Home = React.memo(() => {
     };
   }, []);
 
-
-   const handleGoogle = () => {
-     googleSignIn()
-       .then((res) => {
-        
-         console.log(res);
-         setTimeout(() => {
-         
-         }, 2000);
-       })
-       .catch((err) => console.error(err));
-   };
-
-
+  const handleGoogle = () => {
+    googleSignIn()
+      .then((res) => {
+        console.log(res);
+        setTimeout(() => {}, 2000);
+      })
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div className="">
@@ -95,7 +87,12 @@ const Home = React.memo(() => {
                       href="/auth/signIn/"
                     >
                       <div className="flex items-center gap-3">
-                        <Image width={18} src={email} loading="lazy" alt="email"></Image>
+                        <Image
+                          width={18}
+                          src={email}
+                          loading="lazy"
+                          alt="email"
+                        ></Image>
                         <p>Sign In with email</p>
                       </div>
                     </Link>

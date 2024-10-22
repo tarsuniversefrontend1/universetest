@@ -1,9 +1,9 @@
 "use client";
-import startup from "../../../Public/icons/profile/rightWidget/startup.svg";
-import officials from "../../../Public/icons/profile/rightWidget/officials.svg";
-import settings from "../../../Public/icons/profile/rightWidget/settings.svg";
-import logOut from "../../../Public/icons/profile/rightWidget/logOut.png";
-import theme from "../../../Public/icons/profile/rightWidget/theme.svg";
+import startup from "../../../assets/icons/profile/rightWidget/startup.svg";
+import officials from "../../../assets/icons/profile/rightWidget/officials.svg";
+import settings from "../../../assets/icons/profile/rightWidget/settings.svg";
+import logOut from "../../../assets/icons/profile/rightWidget/logOut.png";
+import theme from "../../../assets/icons/profile/rightWidget/theme.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

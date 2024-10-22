@@ -1,4 +1,4 @@
-import blankUser from "../../../../../Public/icons/home/suggestedconnection/blankUser.svg";
+import blankUser from "../../../../../assets/icons/home/suggestedconnection/blankUser.svg";
 import Image from "next/image";
 import React from "react";
 import Carousel from "react-multi-carousel";

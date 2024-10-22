@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logo from "../../../Public/icons/officialIcons/blackUniverse.svg";
+import logo from "../../../assets/icons/officialIcons/blackUniverse.svg";
 import { usePathname } from "next/navigation";
 
 const AuthLogo = () => {

@@ -4,7 +4,7 @@ import axios from "axios";
 export const PostsFetch = (initialData = {}) => {
   const [postData, setPostData] = useState({
     text: "",
-    privacy: "Public",
+    privacy: "assets",
     location: null,
     scheduled_at: null,
     media: null,
@@ -15,12 +15,11 @@ export const PostsFetch = (initialData = {}) => {
   const [createLoading, setCreateLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-  const [visibility, setVisibility] = useState("Public");
+  const [visibility, setVisibility] = useState("assets");
   const [response, setResponse] = useState();
   const [progress, setProgress] = useState(0);
   const [showProgress, setShowProgress] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-
 
   const fileInputRef = useRef(null); // Create a ref for the file input
 
@@ -57,7 +56,7 @@ export const PostsFetch = (initialData = {}) => {
 
   // Function to remove currently selected media
   const handleRemoveMedia = () => {
-    setCreateLoading(true)
+    setCreateLoading(true);
     setPostData((prev) => ({
       ...prev,
       media: null,
@@ -71,23 +70,21 @@ export const PostsFetch = (initialData = {}) => {
   };
 
   const submitPost = async () => {
-
     setCreateLoading(true);
     setError(null);
     setProgress(0);
     setShowProgress(true);
     setShowSuccess(false);
 
-const interval = setInterval(() => {
-  setProgress((prev) => {
-    if (prev < 100) {
-      return prev + 100 / 100;
-    }
-    clearInterval(interval);
-    return prev;
-  });
-}, 80);
-    
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev < 100) {
+          return prev + 100 / 100;
+        }
+        clearInterval(interval);
+        return prev;
+      });
+    }, 80);
 
     const formData = new FormData();
     formData.append("text", postData.text);
@@ -108,30 +105,32 @@ const interval = setInterval(() => {
         }
       );
 
+      await new Promise((resolve) => setTimeout(resolve, 8000));
 
-await new Promise((resolve) => setTimeout(resolve, 8000));
-
-clearInterval(interval); 
+      clearInterval(interval);
       console.log(response);
       setResponse(response);
       if (response.status === 200) {
-        console.log("You are posting......");setCreateLoading(true);
+        console.log("You are posting......");
+        setCreateLoading(true);
       }
       if (response.status === 201) {
         setCreateLoading(false);
         setSuccess(true);
         setPostData({
           text: "",
-          privacy: "Public",
+          privacy: "assets",
           location: null,
           scheduled_at: null,
           media: null,
           mediaPreviewUrl: null,
         });
-      } else {setCreateLoading(false);
+      } else {
+        setCreateLoading(false);
         throw new Error("Unexpected response status: " + response.status);
       }
-    } catch (error) {setCreateLoading(false);
+    } catch (error) {
+      setCreateLoading(false);
       setSuccess(false);
       setError("Failed to create post. Please try again.");
     } finally {
@@ -155,14 +154,16 @@ clearInterval(interval);
     success,
     handleTextChange,
     setLocation,
-    scheduled_at,setProgress,
+    scheduled_at,
+    setProgress,
     media: (e) => {
       media(e);
       fileInputRef.current = e.target; // Set the ref for the file input
     },
     handleRemoveMedia, // Expose the remove media function
     response,
-    progress,setShowProgress,
+    progress,
+    setShowProgress,
     showProgress,
     showSuccess,
     submitPost,

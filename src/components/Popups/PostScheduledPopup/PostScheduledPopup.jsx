@@ -1,7 +1,5 @@
-
-
 import Image from "next/image";
-import search from "../../../../Public/icons/home/navbar/search.svg";
+import search from "../../../../assets/icons/home/navbar/search.svg";
 
 const PostScheduledPopup = ({ toogleLocation, params, cross }) => {
   return (
@@ -19,19 +17,15 @@ const PostScheduledPopup = ({ toogleLocation, params, cross }) => {
           <div className="flex w-full flex-col gap-2">
             <p className="text-[16px] sf-pro-display">Schedule</p>
             <div className="relative w-full">
-            
-
               <div className="flex flex-col items-start gap-3">
                 {" "}
                 <input
                   type="time"
                   className="w-full h-9 rounded-lg  opacity-70 bg-gray-100 sf-pro-display font-extralight text-[13px] focus:outline-none px-4"
-                  
                 />
                 <input
                   type="date"
                   className="w-full h-9 rounded-lg  opacity-70 bg-gray-100 sf-pro-display font-extralight text-[13px] focus:outline-none px-4"
-                  
                 />
               </div>
             </div>
@@ -49,7 +43,5 @@ const PostScheduledPopup = ({ toogleLocation, params, cross }) => {
 };
 
 export default PostScheduledPopup;
-
-
 
 // PostScheduledPopup

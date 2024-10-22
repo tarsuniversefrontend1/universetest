@@ -1,20 +1,19 @@
 "use client";
 import Image from "next/image";
-import success from "../../../../../Public/icons/ssuccess/greenSuccess.svg";
+import success from "../../../../../assets/icons/ssuccess/greenSuccess.svg";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 const Page = () => {
-const router = useRouter()
+  const router = useRouter();
 
-useEffect(() => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push("/home");
+    }, 3000);
 
-  const timer = setTimeout(() => {
-    router.push("/home"); 
-  }, 3000);
-
-  return () => clearTimeout(timer);
-}, [router]);
+    return () => clearTimeout(timer);
+  }, [router]);
   return (
     <div className="flex items-center justify-center ">
       <div className="flex items-center justify-center gap-4 transition-all duration-500 animate-fadeIn">

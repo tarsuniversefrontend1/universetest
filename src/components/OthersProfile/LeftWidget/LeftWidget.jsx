@@ -1,16 +1,16 @@
 "use client";
 import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
-import blankUser from "../../../../Public/icons/blankUser.png";
-import study from "../../../../Public/icons/profile/study.png";
-import company from "../../../../Public/icons/profile/company.png";
-import location from "../../../../Public/icons/profile/location.svg";
-import pending from "../../../../Public/icons/profile/pending.svg";
-import close from "../../../../Public/icons/register/cross.svg";
-import profileCheck from "../../../../Public/icons/profile/profileCheck.svg";
-import connect from "../../../../Public/icons/othersProfile/connect.svg";
-import lock from "../../../../Public/icons/othersProfile/lock.svg";
-import dot from "../../../../Public/icons/home/timeline/more.png";
+import blankUser from "../../../../assets/icons/blankUser.png";
+import study from "../../../../assets/icons/profile/study.png";
+import company from "../../../../assets/icons/profile/company.png";
+import location from "../../../../assets/icons/profile/location.svg";
+import pending from "../../../../assets/icons/profile/pending.svg";
+import close from "../../../../assets/icons/register/cross.svg";
+import profileCheck from "../../../../assets/icons/profile/profileCheck.svg";
+import connect from "../../../../assets/icons/othersProfile/connect.svg";
+import lock from "../../../../assets/icons/othersProfile/lock.svg";
+import dot from "../../../../assets/icons/home/timeline/more.png";
 import { UserContext } from "@/lib/UserProvider/UserProvider";
 
 const LeftWidget = ({ user }) => {

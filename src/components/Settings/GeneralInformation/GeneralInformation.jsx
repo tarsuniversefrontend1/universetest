@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import legalDoc from "../../../../Public/icons/settings/legalDoc.png";
-import stop from "../../../../Public/icons/settings/stop.png";
+import legalDoc from "../../../../assets/icons/settings/legalDoc.png";
+import stop from "../../../../assets/icons/settings/stop.png";
 import { useFormik } from "formik";
-import plus from "../../../../Public/icons/settings/plus.png";
+import plus from "../../../../assets/icons/settings/plus.png";
 import axios from "axios";
 import { useContext, useRef, useState } from "react";
 import { UserContext } from "@/lib/UserProvider/UserProvider";
@@ -33,7 +33,7 @@ const GeneralInformation = () => {
       setShowPrompt(true);
     }
   };
-  
+
   const formik = useFormik({
     initialValues: {
       firstname: user?.firstname || null,

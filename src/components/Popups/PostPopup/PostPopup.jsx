@@ -2,14 +2,14 @@
 import { UserContext } from "@/lib/UserProvider/UserProvider";
 import Image from "next/image";
 import React, { useContext, useState, useRef } from "react";
-import Visibility from "../../../../Public/icons/create/visibility.svg";
-import cross from "../../../../Public/icons/register/cross.svg";
-import Media from "../../../../Public/icons/create/media.svg";
-import Location from "../../../../Public/icons/create/location.svg";
-import proejct from "../../../../Public/icons/create/proejcts.svg";
-import edit from "../../../../Public/icons/create/write.svg";
-import calendar from "../../../../Public/icons/create/calendar.svg";
-import invest from "../../../../Public/icons/create/invest.svg";
+import Visibility from "../../../../assets/icons/create/visibility.svg";
+import cross from "../../../../assets/icons/register/cross.svg";
+import Media from "../../../../assets/icons/create/media.svg";
+import Location from "../../../../assets/icons/create/location.svg";
+import proejct from "../../../../assets/icons/create/proejcts.svg";
+import edit from "../../../../assets/icons/create/write.svg";
+import calendar from "../../../../assets/icons/create/calendar.svg";
+import invest from "../../../../assets/icons/create/invest.svg";
 import PostLocationPopup from "../PostLocationPopup/PostLocationPopup";
 import PostScheduledPopup from "../PostScheduledPopup/PostScheduledPopup";
 import VisibilityPopup from "../VisibilityPopup/VisibilityPopup";
@@ -19,8 +19,11 @@ import { useRouter } from "next/navigation";
 const PostPopup = ({
   blankUser,
   toogleLocation,
-  createLoading,setError,handleRemoveMedia,
-  error,handleTextChange,
+  createLoading,
+  setError,
+  handleRemoveMedia,
+  error,
+  handleTextChange,
   handleMediaChange,
   toogle,
   handleSubmit,
@@ -28,7 +31,11 @@ const PostPopup = ({
   setTextareaValue,
   selectedLocation,
   setSelectedLocation,
-  visibility,locationPicker,scheluedPicker,visibilityPicker,media,
+  visibility,
+  locationPicker,
+  scheluedPicker,
+  visibilityPicker,
+  media,
   setVisibility,
   postData,
   setPostData,
@@ -44,7 +51,6 @@ const PostPopup = ({
   const { user } = useContext(UserContext);
 
   const fileInputRef = useRef(null); // File input reference
-
 
   return (
     <div className="fixed  top-0 left-0 right-0 bottom-0 inset-0 bg-black backdrop-blur-sm z-[999999] bg-opacity-50 flex justify-center items-center">

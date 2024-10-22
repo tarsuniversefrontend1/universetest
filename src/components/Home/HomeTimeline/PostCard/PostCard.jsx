@@ -1,20 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import like from "../../../../../Public/icons/home/timeline/like.svg";
-import comment from "../../../../../Public/icons/home/timeline/comment.svg";
-import Location from "../../../../../Public/icons/create/location.svg";
-import share from "../../../../../Public/icons/home/timeline/share.svg";
+import like from "../../../../../assets/icons/home/timeline/like.svg";
+import comment from "../../../../../assets/icons/home/timeline/comment.svg";
+import Location from "../../../../../assets/icons/create/location.svg";
+import share from "../../../../../assets/icons/home/timeline/share.svg";
 import { UserContext } from "@/lib/UserProvider/UserProvider";
 import { useContext, useEffect, useState } from "react";
 import MediaDisplay from "../MediaDisplay/MediaDisplay";
-import dot from "../../../../../Public/icons/home/timeline/threeDot.svg";
+import dot from "../../../../../assets/icons/home/timeline/threeDot.svg";
 import Link from "next/link";
 import PostLikeList from "@/components/PostLikeList/PostLikeList";
 const PostCard = ({ post }) => {
   const { user } = useContext(UserContext);
-const [showLikeList, setShowLikeList] = useState(false);
- console.log("PostCard details" , post)
+  const [showLikeList, setShowLikeList] = useState(false);
+  console.log("PostCard details", post);
   return (
     <div className="flex w-full flex-col gap-3">
       <div>
@@ -22,7 +22,6 @@ const [showLikeList, setShowLikeList] = useState(false);
           <div className="shadow p-4  shadow-gray-300 bg-white sm:rounded-xl">
             <div className="w-full items-center justify-between flex">
               <div className="flex items-center gap-3">
-
                 <Link
                   href={`/${
                     post?.user_id === user?.id
@@ -30,7 +29,6 @@ const [showLikeList, setShowLikeList] = useState(false);
                       : `users/${post?.user_id}`
                   }`}
                 >
-
                   {" "}
                   <Image
                     src={post?.author?.profile_url || ""}

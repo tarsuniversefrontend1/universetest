@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
-import like from "../../../../../Public/icons/home/timeline/like.svg";
-import comment from "../../../../../Public/icons/home/timeline/comment.svg";
-import share from "../../../../../Public/icons/home/timeline/share.svg";
-import dot from "../../../../../Public/icons/home/timeline/threeDot.svg";
+import like from "../../../../../assets/icons/home/timeline/like.svg";
+import comment from "../../../../../assets/icons/home/timeline/comment.svg";
+import share from "../../../../../assets/icons/home/timeline/share.svg";
+import dot from "../../../../../assets/icons/home/timeline/threeDot.svg";
 import MediaDisplay from "../MediaDisplay/MediaDisplay";
-import location from "../../../../../Public/icons/home/timeline/location.svg";
-import date from "../../../../../Public/icons/home/timeline/date.svg";
-import time from "../../../../../Public/icons/home/timeline/time.svg";
+import location from "../../../../../assets/icons/home/timeline/location.svg";
+import date from "../../../../../assets/icons/home/timeline/date.svg";
+import time from "../../../../../assets/icons/home/timeline/time.svg";
 
 const EventCard = ({ post }) => {
   return (

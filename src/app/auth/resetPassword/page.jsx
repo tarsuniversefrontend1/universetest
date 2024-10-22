@@ -2,7 +2,7 @@
 import AuthenticationFooter from "@/shared/AuthenticationFooter/AuthenticationFooter";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import reset from "../../../../Public/icons/reset/reset.svg";
+import reset from "../../../../assets/icons/reset/reset.svg";
 import Image from "next/image";
 import axios from "axios";
 import { useVerification } from "@/context/VerificationContext";
@@ -76,7 +76,8 @@ const Page = () => {
 
     const formData = new FormData(e.target);
 
-    try {setLoading(true);
+    try {
+      setLoading(true);
       const response = await axios.post(
         "https://tarsuniverse.net:8443/auth/reset",
         formData,
@@ -88,20 +89,16 @@ const Page = () => {
         }
       );
       console.log("response -", response);
-      
-
 
       if (response.status === 200) {
-
-           axios.defaults.headers.common[
-             "Authorization"
-           ] = `Bearer ${response?.data?.session}`;
+        axios.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${response?.data?.session}`;
 
         setTimeout(() => {
           route.push("/auth/resetPassword/otp");
         }, 2000);
         localStorage.setItem("session", response?.data?.session);
-      
 
         setSuccessMessage("Email sent successfully.");
         setCaptchaError("");
@@ -115,7 +112,6 @@ const Page = () => {
           setLoading(false);
         }
       } else {
-
         setCaptchaError("Failed to send email");
         setSuccessMessage("");
         setLoading(false);

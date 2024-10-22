@@ -1,6 +1,6 @@
 "use client"; // Ensure this component is a client component
 import Image from "next/image";
-import logo from "../../../Public/icons/officialIcons/whiteUniverse.svg";
+import logo from "../../../assets/icons/officialIcons/whiteUniverse.svg";
 import { useEffect, useState } from "react";
 
 const DefaultLogoLoader = ({ children }) => {

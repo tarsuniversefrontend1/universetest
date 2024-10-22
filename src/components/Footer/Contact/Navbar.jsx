@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../../../Public/icons/home/footer/whiteTars.svg";
+import logo from "../../../../assets/icons/home/footer/whiteTars.svg";
 
 const Navbar = () => {
   return (

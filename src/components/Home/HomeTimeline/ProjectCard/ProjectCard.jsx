@@ -1,11 +1,11 @@
 "use client";
 import { useTimeLine } from "@/lib/TimeLineProvider/TimeLineProvider";
-import like from "../../../../../Public/icons/home/timeline/like.svg";
-import comment from "../../../../../Public/icons/home/timeline/comment.svg";
-import share from "../../../../../Public/icons/home/timeline/share.svg";
+import like from "../../../../../assets/icons/home/timeline/like.svg";
+import comment from "../../../../../assets/icons/home/timeline/comment.svg";
+import share from "../../../../../assets/icons/home/timeline/share.svg";
 import Image from "next/image";
 import MediaDisplay from "../MediaDisplay/MediaDisplay";
-import dot from "../../../../../Public/icons/home/timeline/threeDot.svg";
+import dot from "../../../../../assets/icons/home/timeline/threeDot.svg";
 
 const ProjectCard = ({ post }) => {
   const { projectPosts } = useTimeLine();

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import arrow from "../../../../Public/icons/register/arrow.svg";
+import arrow from "../../../../assets/icons/register/arrow.svg";
 import { useContext, useState } from "react";
 import GeneralInformation from "@/components/Settings/GeneralInformation/GeneralInformation";
 import Education from "@/components/Settings/GeneralInformation/Education/Education";
@@ -8,9 +8,7 @@ import ProfessionalExperience from "@/components/Settings/GeneralInformation/Pro
 import Skills from "@/components/Settings/GeneralInformation/Skills/Skills";
 import Link from "next/link";
 
-
 const GeneralInfo = () => {
-
   const [education, setEducation] = useState(false);
   const [experience, setExperience] = useState(false);
   const [skills, setSkills] = useState(false);
@@ -121,7 +119,7 @@ const GeneralInfo = () => {
       </div>
     </div>
   );
-}
+};
 
-export default GeneralInfo
+export default GeneralInfo;
 // settings - > generalInfo route

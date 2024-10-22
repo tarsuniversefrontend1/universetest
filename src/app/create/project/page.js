@@ -1,22 +1,22 @@
 "use client";
 import Image from "next/image";
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import arrowIcon from "../../../../Public/icons/register/arrow.svg";
-import uploadImage from "../../../../Public/icons/create/uploadImage.svg";
+import arrowIcon from "../../../../assets/icons/register/arrow.svg";
+import uploadImage from "../../../../assets/icons/create/uploadImage.svg";
 import Link from "next/link";
-import dot from "../../../../Public/icons/home/timeline/threeDot.svg";
+import dot from "../../../../assets/icons/home/timeline/threeDot.svg";
 import { useRouter } from "next/navigation";
 import ProjectFetch from "@/hooks/ProjectFetch/ProjectFetch";
-import clock from "../../../../Public/icons/create/clock.svg";
-import github from "../../../../Public/icons/create/github.svg";
-import check from "../../../../Public/icons/create/check.svg";
-import pending from "../../../../Public/icons/create/pending.svg";
-import Cross from "../../../../Public/icons/register/cross.svg";
+import clock from "../../../../assets/icons/create/clock.svg";
+import github from "../../../../assets/icons/create/github.svg";
+import check from "../../../../assets/icons/create/check.svg";
+import pending from "../../../../assets/icons/create/pending.svg";
+import Cross from "../../../../assets/icons/register/cross.svg";
 import { UserContext } from "@/lib/UserProvider/UserProvider";
-import like from "../../../../Public/icons/home/timeline/like.svg";
-import comment from "../../../../Public/icons/home/timeline/comment.svg";
-import share from "../../../../Public/icons/home/timeline/share.svg";
-import arrow from "../../../../Public/icons/register/arrow.svg";
+import like from "../../../../assets/icons/home/timeline/like.svg";
+import comment from "../../../../assets/icons/home/timeline/comment.svg";
+import share from "../../../../assets/icons/home/timeline/share.svg";
+import arrow from "../../../../assets/icons/register/arrow.svg";
 import axios from "axios";
 
 export const currencyConverter = {
@@ -232,7 +232,7 @@ const CreateProject = () => {
                     value="public"
                     className="text-black bg-white text-[13px]"
                   >
-                    Public
+                    assets
                   </option>
                   <option
                     value="private"

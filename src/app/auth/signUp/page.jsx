@@ -2,10 +2,10 @@
 // signUp -> page.jsx
 import { useEffect, useState } from "react";
 import { useFormik } from "formik";
-import arrow from "../../../../Public/icons/register/arrow.svg";
-import Question from "../../../../Public/icons/register/Question.svg";
-import upload from "../../../../Public/icons/register/upload.svg";
-import flag from "../../../../Public/icons/register/bd.avif";
+import arrow from "../../../../assets/icons/register/arrow.svg";
+import Question from "../../../../assets/icons/register/Question.svg";
+import upload from "../../../../assets/icons/register/upload.svg";
+import flag from "../../../../assets/icons/register/bd.avif";
 import Image from "next/image";
 import Link from "next/link";
 import RegisterSchema, {
@@ -15,7 +15,7 @@ import axios from "axios";
 
 import { useRouter } from "next/navigation";
 import BlackButton from "@/loaders/BlackButton/BlackButton";
-import cross from "../../../../Public/icons/register/cross.svg";
+import cross from "../../../../assets/icons/register/cross.svg";
 import { useVerification } from "@/context/VerificationContext";
 import { object } from "yup";
 
@@ -44,7 +44,7 @@ const Page = () => {
       axios.defaults.headers.common["Authorization"] = `Bearer ${storedToken}`;
     }
   }, []);
-console.log("Set token" , token)
+  console.log("Set token", token);
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -75,64 +75,64 @@ console.log("Set token" , token)
         formData.append("legalDoc", values.legalDoc);
       }
 
-     try {
-       const response = await axios.post(
-         "https://tarsuniverse.net:8443/auth/signup",
-         formData,
-         {
-           headers: {
-             "Content-Type": "multipart/form-data",
-           },
-         }
-       );
+      try {
+        const response = await axios.post(
+          "https://tarsuniverse.net:8443/auth/signup",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
 
+        const rawData = response.data;
+        const rawParts = rawData.split("}{").map((part, index, arr) => {
+          if (index === 0) return part + "}";
+          if (index === arr.length - 1) return "{" + part;
+          return "{" + part + "}";
+        });
 
-       const rawData = response.data;
-       const rawParts = rawData.split("}{").map((part, index, arr) => {
-         if (index === 0) return part + "}";
-         if (index === arr.length - 1) return "{" + part;
-         return "{" + part + "}";
-       });
+        // Parse each part
+        let sessionToken = null;
+        let verificationCode = null;
+        let successMessage = null;
 
-       // Parse each part
-       let sessionToken = null;
-       let verificationCode = null;
-       let successMessage = null;
+        rawParts.forEach((part) => {
+          try {
+            const jsonPart = JSON.parse(part);
+            if (jsonPart.session) {
+              sessionToken = jsonPart.session;
+            }
+            if (jsonPart.otp) {
+              verificationCode = jsonPart.otp;
+              console.log("Verification Code:", verificationCode);
+            }
+            if (jsonPart.message) {
+              successMessage = jsonPart.message;
+              console.log("Success Message:", successMessage);
+            }
+          } catch (error) {
+            console.error("Error parsing part:", error);
+          }
+        });
 
-       rawParts.forEach((part) => {
-         try {
-           const jsonPart = JSON.parse(part);
-           if (jsonPart.session) {
-             sessionToken = jsonPart.session;
-           }
-           if (jsonPart.otp) {
-             verificationCode = jsonPart.otp;
-             console.log("Verification Code:", verificationCode);
-           }
-           if (jsonPart.message) {
-             successMessage = jsonPart.message;
-             console.log("Success Message:", successMessage);
-           }
-         } catch (error) {
-           console.error("Error parsing part:", error);
-         }
-       });
-
-       if (sessionToken) {
-         setSessionTokenToLocalStorage(sessionToken);
-       }
-       if (verificationCode) {
-         setVerificationCode(verificationCode);
-       }
- axios.defaults.headers.common["Authorization"] = `Bearer ${sessionToken}`;
-       router.push(`/auth/signUp/otp`);
-     } catch (error) {
-       setLoader(false);
-       console.error("Error signing up:", error);
-     } finally {
-       setLoader(false);
-     }
-
+        if (sessionToken) {
+          setSessionTokenToLocalStorage(sessionToken);
+        }
+        if (verificationCode) {
+          setVerificationCode(verificationCode);
+        }
+        axios.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${sessionToken}`;
+        router.push(`/auth/signUp/otp`);
+      } catch (error) {
+        setLoader(false);
+        console.error("Error signing up:", error);
+      } finally {
+        setLoader(false);
+      }
     },
     validateOnChange: true,
     validateOnBlur: true,
@@ -160,8 +160,6 @@ console.log("Set token" , token)
   const handleRemoveFile = () => {
     setFileUrl(null);
   };
-
-
 
   return (
     <div className="relative  ">

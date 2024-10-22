@@ -1,9 +1,9 @@
 "use client";
 import { useContext, useState } from "react";
-import blankUser from "../../../Public/icons/blankUser.png";
+import blankUser from "../../../assets/icons/blankUser.png";
 import Image from "next/image";
 import Link from "next/link";
-import menu from "../../../Public/icons/home/navbar/menu.svg";
+import menu from "../../../assets/icons/home/navbar/menu.svg";
 import { UserContext } from "@/lib/UserProvider/UserProvider";
 import SettingsPopup from "@/components/SettingsPopup/SettingsPopup";
 
@@ -31,7 +31,7 @@ const LoggedInUserPhoto = () => {
           alt="Profile image"
         />
       </Link>
-   
+
       {settings && <SettingsPopup />}
     </div>
   );

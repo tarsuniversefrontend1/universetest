@@ -1,11 +1,10 @@
-
 "use client";
 import Image from "next/image";
-import cover from"../../Public/images/error/cover.svg"
+import cover from "../../assets/images/error/cover.svg";
 import { useRouter } from "next/navigation";
 
 const Page = () => {
-    const route = useRouter()
+  const route = useRouter();
   return (
     <div className="md:flex w-full max-w-5xl mx-auto items-center justify-center md:h-screen ">
       <div className="grid grid-cols-12 justify-center gap-10 items-center">
@@ -41,6 +40,6 @@ const Page = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Page
+export default Page;

@@ -1,9 +1,9 @@
-import startup from "../../../../Public/icons/profile/rightWidget/startup.svg"
-import officials from "../../../../Public/icons/profile/rightWidget/officials.svg"
-import settings from "../../../../Public/icons/profile/rightWidget/settings.svg"
-import theme from "../../../../Public/icons/profile/rightWidget/theme.svg"
-import Image from "next/image"
-import Link from "next/link"
+import startup from "../../../../assets/icons/profile/rightWidget/startup.svg";
+import officials from "../../../../assets/icons/profile/rightWidget/officials.svg";
+import settings from "../../../../assets/icons/profile/rightWidget/settings.svg";
+import theme from "../../../../assets/icons/profile/rightWidget/theme.svg";
+import Image from "next/image";
+import Link from "next/link";
 
 const RightWidget = () => {
   return (
@@ -52,6 +52,6 @@ const RightWidget = () => {
       </div> */}
     </div>
   );
-}
+};
 
-export default RightWidget
+export default RightWidget;

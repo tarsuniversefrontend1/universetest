@@ -1,12 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import arrow from "../../../../Public/icons/register/arrow.svg";
+import arrow from "../../../../assets/icons/register/arrow.svg";
 import Image from "next/image";
 
 const Page = () => {
- 
-
   return (
     <div className="pb-24 overflow-y-auto lg:mt-[6.3rem] mt-20  lg:w-[33rem] md:w-[32rem]">
       <div className="flex w-full flex-col items-start gap-4">

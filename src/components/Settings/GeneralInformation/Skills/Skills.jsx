@@ -1,15 +1,10 @@
 import { useState } from "react";
 import Image from "next/image"; // Ensure you have the correct import for your Image component
-import cross from "../../../../../Public/icons/register/cross.svg";
-import send from "../../../../../Public/icons/settings/send.png";
+import cross from "../../../../../assets/icons/register/cross.svg";
+import send from "../../../../../assets/icons/settings/send.png";
 
 const SkillTaggingSystem = () => {
-  const [skills, setSkills] = useState([
-    "HTML",
-    "Typescript",
-    "JavaScript",
-
-  ]);
+  const [skills, setSkills] = useState(["HTML", "Typescript", "JavaScript"]);
 
   const [input, setInput] = useState("");
 
@@ -19,8 +14,8 @@ const SkillTaggingSystem = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && input) {
-      e.preventDefault(); 
-      const trimmedInput = input.trim(); 
+      e.preventDefault();
+      const trimmedInput = input.trim();
       if (!skills.includes(trimmedInput) && trimmedInput) {
         setSkills([...skills, trimmedInput]);
       }

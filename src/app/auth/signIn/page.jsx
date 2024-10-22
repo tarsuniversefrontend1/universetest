@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import logo from "../../../../Public/icons/officialIcons/blackUniverse.svg";
-import arrow from "../../../../Public/icons/login/arrow.svg";
+import logo from "../../../../assets/icons/officialIcons/blackUniverse.svg";
+import arrow from "../../../../assets/icons/login/arrow.svg";
 import "./style.css";
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
@@ -136,7 +136,7 @@ const Page = () => {
                     name="password"
                     value={formik.values.password}
                     onChange={formik.handleChange}
-                    onFocus={(e) => (e.target.type = "text")} 
+                    onFocus={(e) => (e.target.type = "text")}
                     onBlur={(e) => (e.target.type = "password")}
                   />
                   {formik.errors.password && formik.touched.password && (

@@ -3,13 +3,13 @@
 import { UserContext } from "@/lib/UserProvider/UserProvider";
 import Image from "next/image";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import blankUser from "../../../../Public/icons/blankUser.png";
-import study from "../../../../Public/icons/profile/study.png";
-import company from "../../../../Public/icons/profile/company.png"; // Note: This variable is not used in your code
-import editing from "../../../../Public/icons/profile/editing.png";
-import location from "../../../../Public/icons/profile/location.svg";
+import blankUser from "../../../../assets/icons/blankUser.png";
+import study from "../../../../assets/icons/profile/study.png";
+import company from "../../../../assets/icons/profile/company.png"; // Note: This variable is not used in your code
+import editing from "../../../../assets/icons/profile/editing.png";
+import location from "../../../../assets/icons/profile/location.svg";
 import axios from "axios";
-import coverEdit from "../../../../Public/icons/profile/profileEdit.svg";
+import coverEdit from "../../../../assets/icons/profile/profileEdit.svg";
 import LeftWidgetLoader from "@/loaders/Profile/LeftWidgetLoader/LeftWidgetLoader";
 import Link from "next/link";
 

@@ -1,25 +1,24 @@
 import Image from "next/image";
 import PropTypes from "prop-types";
 import { useState } from "react"; // Import useState to manage input state
-import search from "../../../../Public/icons/home/navbar/search.svg";
+import search from "../../../../assets/icons/home/navbar/search.svg";
 
 const PostLocationPopup = ({
   toogleLocation,
   location,
   crossIcon,
-  setLocation,setSelectedLocation,selectedLocation,
+  setLocation,
+  setSelectedLocation,
+  selectedLocation,
   cross,
 }) => {
-
-
   const handleLocationChoice = () => {
     setLocation(selectedLocation); // Set the selected location
     toogleLocation(); // Close the popup
     cross(); // Execute cross function
     setSelectedLocation(selectedLocation); // Set the selected location
-    console.log(selectedLocation)
+    console.log(selectedLocation);
   };
-
 
   return (
     <div className="bg-white py-5 md:px-16 px-3 rounded-lg w-full shadow-[0px_-5px_10px_rgba(0,0,0,0.1)] relative overflow-y-auto">
@@ -69,6 +68,5 @@ const PostLocationPopup = ({
     </div>
   );
 };
-
 
 export default PostLocationPopup;

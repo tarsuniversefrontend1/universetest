@@ -1,6 +1,6 @@
 "use client";
-import plus from "../../../../../Public/icons/settings/plus.png";
-import arrow from "../../../../../Public/icons/register/arrow.svg";
+import plus from "../../../../../assets/icons/settings/plus.png";
+import arrow from "../../../../../assets/icons/register/arrow.svg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -21,21 +21,20 @@ const ProfessionalExperience = () => {
     setDropdownVisible(false);
   };
 
- useEffect(() => {
-   axios
-     .get("/industry.json")
-     .then((res) => {
-       setData(res.data);
-       setFilteredData(res.data); // Initialize filtered data
-     })
-     .catch((err) => {
-       setError(err.message);
-     })
-     .finally(() => {
-       setLoading(false);
-     });
- }, []);
-
+  useEffect(() => {
+    axios
+      .get("/industry.json")
+      .then((res) => {
+        setData(res.data);
+        setFilteredData(res.data); // Initialize filtered data
+      })
+      .catch((err) => {
+        setError(err.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
   const handleInputChange = (e) => {
     const value = e.target.value;

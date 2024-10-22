@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import tarsLogo from "../../../../Public/icons/home/footer/tarsLogo.svg";
-import copyRight from "../../../../Public/icons/home/footer/copyright.svg";
-import lock from "../../../../Public/icons/home/footer/lock.svg";
+import tarsLogo from "../../../../assets/icons/home/footer/tarsLogo.svg";
+import copyRight from "../../../../assets/icons/home/footer/copyright.svg";
+import lock from "../../../../assets/icons/home/footer/lock.svg";
 
 const Footer = () => {
   return (

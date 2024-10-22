@@ -3,7 +3,7 @@ import { UserContext } from "@/lib/UserProvider/UserProvider";
 import axios from "axios";
 import Image from "next/image";
 import { useContext, useEffect, useRef, useState } from "react";
-import coverEdit from "../../../../Public/icons/profile/profileEdit.svg";
+import coverEdit from "../../../../assets/icons/profile/profileEdit.svg";
 
 const CoverPhoto = () => {
   const { user, setUser, loading } = useContext(UserContext);
@@ -12,7 +12,7 @@ const CoverPhoto = () => {
     coverImageURL?.String || ""
   );
   const fileInputRef = useRef(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (coverImageURL?.String) {
@@ -51,11 +51,11 @@ const CoverPhoto = () => {
   };
 
   const openModal = () => {
-    setIsModalOpen(true); 
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); 
+    setIsModalOpen(false);
   };
 
   return (

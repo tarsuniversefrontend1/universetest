@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import user from "../../../../Public/icons/settings/user.svg";
-import security from "../../../../Public/icons/settings/security.svg";
-import notification from "../../../../Public/icons/settings/notification.svg";
-import wallet from "../../../../Public/icons/settings/wallet.svg";
-import preference from "../../../../Public/icons/settings/preference.svg";
-import arrow from "../../../../Public/icons/settings/arrow.svg";
+import user from "../../../../assets/icons/settings/user.svg";
+import security from "../../../../assets/icons/settings/security.svg";
+import notification from "../../../../assets/icons/settings/notification.svg";
+import wallet from "../../../../assets/icons/settings/wallet.svg";
+import preference from "../../../../assets/icons/settings/preference.svg";
+import arrow from "../../../../assets/icons/settings/arrow.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import usePathname
