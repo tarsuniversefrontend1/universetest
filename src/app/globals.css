@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/azonix");
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
+p {
+  font-family: "SF Pro Display", sans-serif;
+}
+.captcha {
+  font-family: "Courier New", Courier, monospace !important;
+}
+
+.azonix {
+  font-family: "Azonix" !important;
+}
+
+::placeholder {
+  font-weight: 300;
+  color: black !important;
+  font-size: 13px !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: black;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black transparent;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+/* carousel item  */
+.carousel-item {
+  display: flex;
+  margin-left: 10px;
+}
+
+.carousel-container {
+  width: 100%;
+}
