@@ -23,73 +23,60 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-   const handleScroll = () => {
-     const currentScrollY = window.scrollY;
-     if (currentScrollY > lastScrollY && currentScrollY > 50) {
-       // Scrolling down
-       setIsVisible(false);
-     } else {
-       // Scrolling up
-       setIsVisible(true);
-     }
-     setLastScrollY(currentScrollY);
-   };
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      // Scrolling down
+      setIsVisible(false);
+    } else {
+      // Scrolling up
+      setIsVisible(true);
+    }
+    setLastScrollY(currentScrollY);
+  };
 
-   useEffect(() => {
-     // Add scroll event listener
-     window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
 
-     // Cleanup event listener on component unmount
-     return () => {
-       window.removeEventListener("scroll", handleScroll);
-     };
-   }, [lastScrollY]);
-;
-   const {
-     setError,
-     refetchPosts,
-   } = useTimeLine();
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+  const { setError, refetchPosts } = useTimeLine();
 
-   const handleClick = () => {
-     window.scrollTo({ top: 0, behavior: "smooth" });
-     refetchPosts();
-     setError(null);
-   };
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    refetchPosts();
+    setError(null);
+  };
 
- 
   const hideNavbar = [
-    "/auth/signIn/",
-    "/auth/signUp/",
+    "/auth/signIn",
+    "/auth/signUp",
     "/",
-    "/auth/signUp/",
-    "/auth/signUp/otp/",
-    "/auth/signUp/success/",
-    "/auth/resetPassword/",
-    "/auth/resetPassword/success/",
-    "/auth/resetPassword/otp/",
-    "/auth/resetPassword/passwordRecovery/",
-    '/footer/contact/'
+    "/auth/signUp",
+    "/auth/signUp/otp",
+    "/auth/signUp/success",
+    "/auth/resetPassword",
+    "/auth/resetPassword/success",
+    "/auth/resetPassword/otp",
+    "/auth/resetPassword/passwordRecovery",
+    "/footer/contact",
   ].includes(pathname);
 
-   if (hideNavbar) return null;
+  if (hideNavbar) return null;
 
+  const toogleSettings = () => {
+    setSettings(!settings);
+  };
 
-
-const toogleSettings = () => {
-  setSettings(!settings);
-};
-
-
-
- if (hideNavbar) return null;
-
-
-
+  if (hideNavbar) return null;
 
   const navbar = (
     <>
-      <div
-      >
+      <div>
         <div className="">
           <div className="flex w-full lg:justify-normal justify-between items-center lg:px-0 px-8  lg:gap-2">
             <Link
@@ -185,10 +172,12 @@ const toogleSettings = () => {
       </div>
     </>
   );
-  
+
   return (
     <div>
-      <div className={`w-full z-[999999] fixed top-0 lg:py-0 py-2  bg-white  shadow-sm shadow-gray-300`}>
+      <div
+        className={`w-full z-[999999] fixed top-0 lg:py-0 py-2  bg-white  shadow-sm shadow-gray-300`}
+      >
         <div className="px-5 max-w-6xl mx-auto">
           <div className="flex items-center justify-between  ">
             <div className="flex items-center gap-5">
