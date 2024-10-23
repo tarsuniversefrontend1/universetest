@@ -2,8 +2,8 @@
 const nextConfig = {
   images: {
     domains: [
-      "test2.tarsuniverse.com",
       "test.tarsuniverse.com",
+      "test2.tarsuniverse.com",
       "tarsuniverse.netlify.app",
     ],
     unoptimized: true,

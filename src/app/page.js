@@ -5,8 +5,8 @@ import Link from "next/link";
 import Footer from "@/components/Footer/Footer";
 import { AuthContext } from "@/AuthProvider/AuthProvider";
 import email from "../../assets/icons/welcome/email.png";
-import logo from "../../assets/icons/officialicons/whiteUniverse.svg";
-import logo2 from "../../assets/icons/officialicons/blackUniverse.svg";
+import logo from "../../assets/icons/officialIcons/whiteUniverse.svg";
+import logo2 from "../../assets/icons/officialIcons/blackUniverse.svg";
 
 const Home = React.memo(() => {
   const [showLogo, setShowLogo] = useState(false);
