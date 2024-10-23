@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["test.tarsuniverse.com"],
+    domains: [
+      "test2.tarsuniverse.com",
+      "test.tarsuniverse.com",
+      "tarsuniverse.netlify.app",
+    ],
     unoptimized: true,
   },
   // output: "export",
