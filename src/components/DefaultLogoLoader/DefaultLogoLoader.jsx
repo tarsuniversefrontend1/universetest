@@ -96,6 +96,7 @@ const DefaultLogoLoader = ({ children }) => {
           alt="logo"
           width={100}
           height={100}
+          loading="lazy"
           className="mb-4"
         />
         <p className="text-white mt-4 bg-black rounded-full py-2 px-8 fixed top-0 left-1/2 transform -translate-x-1/2">

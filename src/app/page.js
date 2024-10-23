@@ -5,6 +5,8 @@ import Link from "next/link";
 import Footer from "@/components/Footer/Footer";
 import { AuthContext } from "@/AuthProvider/AuthProvider";
 import email from "../../assets/icons/welcome/email.png";
+import logo from "../../assets/icons/officialicons/whiteUniverse.svg";
+import logo2 from "../../assets/icons/officialicons/blackUniverse.svg";
 
 const Home = React.memo(() => {
   const [showLogo, setShowLogo] = useState(false);
@@ -44,7 +46,7 @@ const Home = React.memo(() => {
       >
         <div className="flex justify-center w-full ">
           <Image
-            src="/icons/officialIcons/whiteUniverse.svg"
+            src={logo}
             alt="whiteUniverse"
             width={160}
             height={160}
@@ -66,7 +68,7 @@ const Home = React.memo(() => {
                 {" "}
                 <div className="md:col-span-6  md:w-full md:h-full  col-span-12">
                   <Image
-                    src="/icons/officialIcons/blackUniverse.svg"
+                    src={logo2}
                     alt="whiteUniverse"
                     width={300}
                     height={300}
