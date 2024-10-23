@@ -1,11 +1,10 @@
 import axios from "axios";
 import * as Yup from "yup";
 
-
 const checkUsernameAvailability = async (username) => {
   try {
     const response = await axios.get(
-      `https://tarsuniverse.net:8443/api/check-username?username=${username}`
+      `https://tarsuniverse.net:8443/auth/api/check-username?username=${username}`
     );
     return response.data.available;
   } catch (error) {
@@ -16,7 +15,7 @@ const checkUsernameAvailability = async (username) => {
 const checkemailAvailability = async (email) => {
   try {
     const response = await axios.get(
-      `https://tarsuniverse.net:8443/api/check-email?email=${email}`
+      `https://tarsuniverse.net:8443/auth/api/check-email?email=${email}`
     );
     return response.data.available;
   } catch (error) {
@@ -27,7 +26,7 @@ const checkemailAvailability = async (email) => {
 const checkphoneAvailability = async (phone) => {
   try {
     const response = await axios.get(
-      `https://tarsuniverse.net:8443/api/check-phone?phone=${phone}`
+      `https://tarsuniverse.net:8443/auth/api/check-phone?phone=${phone}`
     );
     return response.data.available;
   } catch (error) {
